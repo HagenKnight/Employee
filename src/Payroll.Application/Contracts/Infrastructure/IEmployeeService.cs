@@ -2,9 +2,9 @@
 
 namespace Payroll.Application.Contracts.Infrastructure
 {
-    public interface IEmployeeService<T> where T : BaseDomainModel
+    public interface IEmployeeService<T> where T : BaseDTO
     {
-        Task<IReadOnlyList<T>> GetAllEmployeesAsync();
+        Task<IEnumerable<T>> GetAllEmployeesAsync();
         Task<T> GetEmployeeByIdAsync(int id);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Payroll.Domain
 {
-    public class EmployeeDTO : BaseDomainModel
+    public class EmployeeViewModel : BaseDomainModel
     {
         public string Name { get; set; } = string.Empty;
         public int Salary { get; set; }

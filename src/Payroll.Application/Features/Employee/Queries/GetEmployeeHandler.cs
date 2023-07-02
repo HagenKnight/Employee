@@ -5,7 +5,7 @@ using Payroll.Domain;
 
 namespace Payroll.Application.Features.Employee.Queries
 {
-    public class GetEmployeeHandler : IRequestHandler<GetEmployeeQuery, EmployeeDTO>
+    public class GetEmployeeHandler : IRequestHandler<GetEmployeeQuery, EmployeeViewModel>
     {
         private readonly IMapper _mapper;
         private readonly IEmployeeService<EmployeeDTO> _employeeService;
@@ -16,8 +16,13 @@ namespace Payroll.Application.Features.Employee.Queries
             _employeeService = employeeService;
         }
 
-        public async Task<EmployeeDTO> Handle(GetEmployeeQuery request, CancellationToken cancellationToken) => 
-            await _employeeService.GetEmployeeByIdAsync(request.Id);
+        public async Task<EmployeeViewModel> Handle(GetEmployeeQuery request, CancellationToken cancellationToken)
+        {
+            //throw new NotImplementedException();
+            var employee = await _employeeService.GetEmployeeByIdAsync(request.Id);
+
+            return _mapper.Map<EmployeeViewModel>(employee);
+        }
 
     }
 }

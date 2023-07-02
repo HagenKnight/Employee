@@ -1,6 +1,7 @@
 using Payroll.API.Middleware;
 using Payroll.Application;
 using Payroll.Infrastructure;
+using Newtonsoft.Json.Serialization;
 
 namespace Payroll.API
 {
@@ -17,8 +18,21 @@ namespace Payroll.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            //builder.Services.AddInfrastructureServices(builder.Configuration);
+            builder.Services.AddInfrastructureServices(builder.Configuration);
             builder.Services.AddApplicationServices();
+
+            builder.Services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.UseCamelCasing(true);
+                options.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
+                options.SerializerSettings.Culture = System.Globalization.CultureInfo.CurrentCulture;
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+                options.SerializerSettings.DateTimeZoneHandling = Newtonsoft.Json.DateTimeZoneHandling.Local;
+                options.SerializerSettings.FloatFormatHandling = Newtonsoft.Json.FloatFormatHandling.DefaultValue;
+                options.SerializerSettings.FloatParseHandling = Newtonsoft.Json.FloatParseHandling.Decimal;
+                options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
 
             builder.Services.AddCors(options =>
             {
