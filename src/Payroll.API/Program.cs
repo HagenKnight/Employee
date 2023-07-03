@@ -42,6 +42,8 @@ namespace Payroll.API
                 );
             });
 
+            builder.Services.AddTransient<ErrorHandlerMiddleware>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -50,7 +52,7 @@ namespace Payroll.API
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-            app.UseMiddleware<ExceptionMiddleware>();
+            app.UseMiddleware<ErrorHandlerMiddleware>();
 
             app.UseHttpsRedirection();
 

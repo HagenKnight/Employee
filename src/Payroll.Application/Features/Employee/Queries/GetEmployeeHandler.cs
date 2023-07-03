@@ -18,9 +18,7 @@ namespace Payroll.Application.Features.Employee.Queries
 
         public async Task<EmployeeViewModel> Handle(GetEmployeeQuery request, CancellationToken cancellationToken)
         {
-            //throw new NotImplementedException();
             var employee = await _employeeService.GetEmployeeByIdAsync(request.Id);
-
             return _mapper.Map<EmployeeViewModel>(employee);
         }
 
