@@ -7,6 +7,6 @@ namespace Payroll.Domain
         public string Name { get; set; } = string.Empty;
         public int Salary { get; set; }
         public int Age { get; set; }
-        public string Image { get; set; } = string.Empty;
+        public string ProfileImage { get; set; } = string.Empty;
     }
 }

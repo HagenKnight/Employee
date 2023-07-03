@@ -1,0 +1,16 @@
+<form [formGroup]="searchForm" (ngSubmit)="getEmployeeData()">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-text" id="button-addon1"><i class="fa-solid fa-id-card"></i>
+      </div>
+      <input type="text" class="form-control" formControlName="employeeId" placeholder="Search for an Employee Id"
+        aria-label="Search for an Employee Id" aria-describedby="button-addon2">
+
+      <div class="input-group-append">
+        <button class="btn  btn-primary" type="submit" id="button-addon2" ><i
+            class="fa-solid fa-magnifying-glass fa-bounce"></i> Search</button>
+      </div>
+    </div>
+  </div>
+</form>
+
