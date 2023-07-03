@@ -2,7 +2,11 @@
 .Net Software Developer Test
 >By Giovanni García R - July 2023
 
+## Introduction
+This solution was developed using .NET 7 and Angular CLI 15.2.0.
+
 ## Backend app
+
 To launch the backend app, go to the `src\Payrol.API` folder and run the following command:
 
 ```bash
