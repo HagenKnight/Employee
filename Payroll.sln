@@ -28,6 +28,26 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Payroll.Infrastructure", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll.Application.NUnit", "test\Payroll.Application.NUnit\Payroll.Application.NUnit.csproj", "{6EB5CF2D-83DF-4596-B8D6-CA42E8B061BA}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Payroll.UI(1)", "src\Payroll.UI\", "{13F68F8F-F38E-4187-80CD-F575FEC90D5F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_65133"
+		Debug.AspNetCompiler.PhysicalPath = "src\Payroll.UI\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65133\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_65133"
+		Release.AspNetCompiler.PhysicalPath = "src\Payroll.UI\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65133\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "65133"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +74,10 @@ Global
 		{6EB5CF2D-83DF-4596-B8D6-CA42E8B061BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EB5CF2D-83DF-4596-B8D6-CA42E8B061BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EB5CF2D-83DF-4596-B8D6-CA42E8B061BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F68F8F-F38E-4187-80CD-F575FEC90D5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F68F8F-F38E-4187-80CD-F575FEC90D5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F68F8F-F38E-4187-80CD-F575FEC90D5F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F68F8F-F38E-4187-80CD-F575FEC90D5F}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +90,7 @@ Global
 		{0D53252B-39E2-40ED-A87C-FFE786900FE9} = {52307BA4-51E3-480B-99DC-76AD1A7B89B5}
 		{6FEC593B-A144-4BA9-90A1-813E36DB85F1} = {52307BA4-51E3-480B-99DC-76AD1A7B89B5}
 		{EC0588CD-FB8D-46CD-9289-9B2F9E67E37B} = {8AB7BF49-D088-4D8F-8A2F-597D8D588F50}
+		{13F68F8F-F38E-4187-80CD-F575FEC90D5F} = {7FE69E80-2B76-42C5-8D70-1FF81ED9A4DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3CF3CD14-10DE-4483-973B-EA2F2C2951C4}
