@@ -26,6 +26,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Payroll.Application", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Payroll.Infrastructure", "src\Payroll.Infrastructure\Payroll.Infrastructure.csproj", "{EC0588CD-FB8D-46CD-9289-9B2F9E67E37B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll.Application.NUnit", "test\Payroll.Application.NUnit\Payroll.Application.NUnit.csproj", "{6EB5CF2D-83DF-4596-B8D6-CA42E8B061BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{EC0588CD-FB8D-46CD-9289-9B2F9E67E37B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC0588CD-FB8D-46CD-9289-9B2F9E67E37B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC0588CD-FB8D-46CD-9289-9B2F9E67E37B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EB5CF2D-83DF-4596-B8D6-CA42E8B061BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EB5CF2D-83DF-4596-B8D6-CA42E8B061BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EB5CF2D-83DF-4596-B8D6-CA42E8B061BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EB5CF2D-83DF-4596-B8D6-CA42E8B061BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

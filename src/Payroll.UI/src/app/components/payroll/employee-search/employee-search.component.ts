@@ -38,12 +38,22 @@ export class EmployeeSearchComponent implements OnInit {
           this.payrollComponent.showEmployeeCard = false;
           this.payrollComponent.showEmployeeList = true;
           this.employeeService.employeeList = data;
+          this.toastr.success('Request successfully processed', 'Success');
         },
-        ({ error }) => {
-          console.log(error);
-          // launch error modal
+        ({status, error}) => {
+
           this.payrollComponent.showEmployeeList = false;
-          this.toastr.error(`${error.message}`, 'Error');
+          console.log("code: " + status);
+          console.log({error});
+          if(status === 429) {
+            this.toastr.error(`${error.message}`, 'Error');
+          }
+          else if (status === 404) {
+            this.toastr.warning(`${error.message}`, 'Warning');
+          }
+          else  if (status === 400) {
+            this.toastr.error(`${error.title}`, 'Bad Request');
+          }
         }
       );
     } else {
@@ -56,11 +66,22 @@ export class EmployeeSearchComponent implements OnInit {
           this.payrollComponent.showEmployeeCard = true;
           this.payrollComponent.showEmployeeList = false;
           this.employeeService.employeeData = data;
+          this.toastr.success('Request successfully processed', 'Success');
         },
-        ({ error }) => {
-          console.log(error);
-          this.payrollComponent.showEmployeeCard = false;
-          this.toastr.error(`${error.message}`, 'Error');
+        ({status, error}) => {
+
+          this.payrollComponent.showEmployeeList = false;
+          console.log("code: " + status);
+          console.log({error});
+          if(status === 429) {
+            this.toastr.error(`${error.message}`, 'Error');
+          }
+          else if (status === 404) {
+            this.toastr.warning(`${error.message}`, 'Warning');
+          }
+          else  if (status === 400) {
+            this.toastr.error(`${error.title}`, 'Bad Request');
+          }
         }
       );
     }
