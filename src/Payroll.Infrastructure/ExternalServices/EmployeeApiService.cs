@@ -77,5 +77,10 @@ namespace Payroll.Infrastructure.ExternalServices
                 throw new ExternalApiException($"StatusCode: {(int) response.StatusCode} - {response.ReasonPhrase}");
             }
         }
+
+        public int GetEmployeeAnualSalary(int employeeSalary)
+        {
+            return employeeSalary * 12;
+        }
     }
 }

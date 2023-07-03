@@ -6,5 +6,6 @@ namespace Payroll.Application.Contracts.Infrastructure
     {
         Task<IEnumerable<T>> GetAllEmployeesAsync();
         Task<T> GetEmployeeByIdAsync(int id);
+        int GetEmployeeAnualSalary(int employeeSalary);
     }
 }
