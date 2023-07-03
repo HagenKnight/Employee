@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.Runtime.Serialization;
 
-namespace Payroll.Domain.Exceptions
+namespace Payroll.Application.Exceptions
 {
     public class BusinessException : Exception
     {

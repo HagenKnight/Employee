@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class PayrollComponent {
 
+  showEmployeeCard: boolean = false;
+  showEmployeeList: boolean = false;
 }

@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace Payroll.Domain.Exceptions.Api
+namespace Payroll.Application.Exceptions.Api
 {
     public class ApiException : Exception
     {

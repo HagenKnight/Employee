@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using Payroll.Domain.Exceptions;
-using Payroll.Domain.Exceptions.Api;
+using Payroll.Application.Exceptions;
+using Payroll.Application.Exceptions.Api;
 using Payroll.Domain.Wrappers;
 using System.Linq.Dynamic.Core.Exceptions;
 
@@ -33,7 +33,7 @@ namespace Payroll.API.Middleware
                     case ValidateException e:
                         // custom application error
                         response.StatusCode = StatusCodes.Status422UnprocessableEntity;
-                        responseModel.Errors = e.ErrorsDictionary;
+                        //responseModel.Errors = e.ErrorsDictionary;
                         break;
 
                     case KeyNotFoundException e:
@@ -61,7 +61,6 @@ namespace Payroll.API.Middleware
                         response.StatusCode = StatusCodes.Status400BadRequest;
                         break;
 
-
                     case BusinessException e:
                         // not found error
                         response.StatusCode = StatusCodes.Status406NotAcceptable;
@@ -74,7 +73,7 @@ namespace Payroll.API.Middleware
 
                     case ExternalApiException e:
                         // custom application error
-                        response.StatusCode = StatusCodes.Status400BadRequest;
+                        response.StatusCode = e.Code;  // StatusCodes.Status400BadRequest;
                         break;
 
                     default:

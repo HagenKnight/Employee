@@ -13,8 +13,8 @@
       <th>{{employee.id}}</th>
       <td>{{employee.name}}</td>
       <td>{{employee.age}}</td>
-      <td>{{employee.salary}}</td>
-      <td >$ 12041.0000</td>
+      <td>{{employee.salary | currency}}</td>
+      <td>{{employee.anualSalary | currency}}</td>
     </tr>
   </tbody>
 </table>

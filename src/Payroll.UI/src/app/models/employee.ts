@@ -1,7 +1,8 @@
 export class Employee {
   id!: number;
   name!: string;
-  salary!: number;
   age!: number;
+  salary!: number;
+  anualSalary!: number;
   profileImage!: string;
 }

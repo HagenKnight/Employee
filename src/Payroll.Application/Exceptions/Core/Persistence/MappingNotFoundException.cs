@@ -1,4 +1,4 @@
-﻿namespace PortPayroll.Domain.Exceptions
+﻿namespace Payroll.Application.Exceptions
 {
     public class MappingNotFoundException : Exception
     {

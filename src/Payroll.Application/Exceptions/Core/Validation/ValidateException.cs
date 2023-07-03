@@ -2,6 +2,13 @@
 
 namespace Payroll.Application.Exceptions
 {
+    public class ValidateException : Exception
+    {
+        public IReadOnlyDictionary<string, string[]> ErrorsDictionary { get; }
+        public ValidateException(IReadOnlyDictionary<string, string[]> errorDictionary) :
+          base(">>> One or more validation errors occurred") => ErrorsDictionary = errorDictionary;
+    }
+
     //public class ValidationException : ApplicationException
     //{
     //    public ValidationException() : base("Se presentaron uno o mas errores de validacion")
@@ -16,6 +23,8 @@ namespace Payroll.Application.Exceptions
     //            .ToDictionary(failureGroup => failureGroup.Key, failureGroup => failureGroup.ToArray());
 
     //    }
+
+
     //    public IDictionary<string, string[]> Errors { get; }
 
     //}

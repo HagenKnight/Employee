@@ -1,14 +1,20 @@
-<div class="card-container">
+<div class="card-container" *ngIf="employeeService.employeeData;">
   <div class="upper-container">
     <div class="image-container">
-      <img src="/assets/img/7.png" alt="Employee image" srcset="">
+      <img
+        [src]="employeeService.employeeData.profileImage ? employeeService.employeeData.profileImage : '/assets/img/7.png'"
+        alt="Profile image" srcset="">
     </div>
   </div>
   <div class="lower-container">
-    <h3>Pandora Papadopoulus</h3>
+    <h3>{{employeeService.employeeData.name}}</h3>
     <div class="details">
-      <h5>Age: 41 years</h5>
-      <h5>Salary: $ 41.000</h5>
+      <h5>Age: {{employeeService.employeeData.age}} years old</h5>
+      <h5>Salary: {{employeeService.employeeData.salary | currency}}</h5>
     </div>
+
+    <ng-template #loading>
+      <p>Loading employee data...</p>
+    </ng-template>
   </div>
 </div>

@@ -18,8 +18,16 @@ namespace Payroll.Application.Features.Employee.Queries
 
         public async Task<IEnumerable<EmployeeViewModel>> Handle(GetAllEmployeesQuery request, CancellationToken cancellationToken)
         {
-            var listOfEmployees =  await _employeeService.GetAllEmployeesAsync();
-            return _mapper.Map<IEnumerable<EmployeeViewModel>>(listOfEmployees);
+            var listOfEmployees = await _employeeService.GetAllEmployeesAsync();
+            IEnumerable<EmployeeViewModel> listOfEmployeesWithSalary = _mapper.Map<IEnumerable<EmployeeViewModel>>(listOfEmployees);
+
+            listOfEmployeesWithSalary = listOfEmployeesWithSalary.Select(employee =>
+            {
+                employee.AnualSalary = _employeeService.GetEmployeeAnualSalary(employee.Salary);
+                return employee;
+            });
+
+            return listOfEmployeesWithSalary;
         }
     }
 }

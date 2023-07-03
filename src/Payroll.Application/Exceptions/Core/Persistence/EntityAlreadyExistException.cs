@@ -1,4 +1,4 @@
-﻿namespace Payroll.Domain.Exceptions
+﻿namespace Payroll.Application.Exceptions
 {
     public class EntityAlreadyExistException : Exception
     {

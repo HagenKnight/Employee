@@ -1,26 +1,24 @@
 <div class="jumbotron">
   <h1 class="display-4 text-center">Thales Payroll</h1>
   <hr>
-  <div class="row">
+  <div class="row search-employee">
     <div class="col-md-4 offset-md-4">
       <app-employee-search>
 
       </app-employee-search>
     </div>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h3>Employee card</h3>
-      <app-employee-card>
-      </app-employee-card>
-    </div>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <app-employee-card *ngIf="showEmployeeCard">
+    </app-employee-card>
   </div>
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h3>Employee List</h3>
-      <app-employee-list>
-      </app-employee-list>
-    </div>
+</div>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <app-employee-list *ngIf="showEmployeeList">
+    </app-employee-list>
   </div>
 </div>

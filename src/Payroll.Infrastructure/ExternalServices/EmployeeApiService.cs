@@ -3,12 +3,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Payroll.Application.Contracts.Infrastructure;
+using Payroll.Application.Exceptions;
+using Payroll.Application.Exceptions.Api;
 using Payroll.Application.Models;
 using Payroll.Domain;
-using Payroll.Domain.Exceptions;
-using Payroll.Domain.Exceptions.Api;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Payroll.Infrastructure.ExternalServices
 {
@@ -48,9 +46,8 @@ namespace Payroll.Infrastructure.ExternalServices
             else
             {
                 _logger.LogError($"{response.StatusCode} - {response.ReasonPhrase}");
-                throw new ExternalApiException($"StatusCode: {(int)response.StatusCode} - {response.ReasonPhrase}");
+                throw new ExternalApiException((int)response.StatusCode, response.ReasonPhrase);
             }
-
         }
 
         public async Task<EmployeeDTO> GetEmployeeByIdAsync(int id)
@@ -74,7 +71,7 @@ namespace Payroll.Infrastructure.ExternalServices
             else
             {
                 _logger.LogError($"{response.StatusCode} - {response.ReasonPhrase}");
-                throw new ExternalApiException($"StatusCode: {(int) response.StatusCode} - {response.ReasonPhrase}");
+                throw new ExternalApiException((int)response.StatusCode, $"StatusCode: {(int) response.StatusCode} - {response.ReasonPhrase}");
             }
         }
 
